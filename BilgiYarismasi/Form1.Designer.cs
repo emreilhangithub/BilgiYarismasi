@@ -46,6 +46,7 @@ namespace BilgiYarismasi
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.BtnYeni = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -56,10 +57,11 @@ namespace BilgiYarismasi
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(547, 211);
             this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.richTextBox1.Text = "Oyunu Başlatmak İçin Lütfen BAŞLAT Butonuna Basın";
             // 
             // BtnA
             // 
+            this.BtnA.Enabled = false;
             this.BtnA.Location = new System.Drawing.Point(32, 244);
             this.BtnA.Name = "BtnA";
             this.BtnA.Size = new System.Drawing.Size(264, 58);
@@ -70,6 +72,7 @@ namespace BilgiYarismasi
             // 
             // BtnB
             // 
+            this.BtnB.Enabled = false;
             this.BtnB.Location = new System.Drawing.Point(319, 244);
             this.BtnB.Name = "BtnB";
             this.BtnB.Size = new System.Drawing.Size(260, 58);
@@ -80,6 +83,7 @@ namespace BilgiYarismasi
             // 
             // BtnC
             // 
+            this.BtnC.Enabled = false;
             this.BtnC.Location = new System.Drawing.Point(32, 322);
             this.BtnC.Name = "BtnC";
             this.BtnC.Size = new System.Drawing.Size(264, 58);
@@ -90,6 +94,7 @@ namespace BilgiYarismasi
             // 
             // BtnD
             // 
+            this.BtnD.Enabled = false;
             this.BtnD.Location = new System.Drawing.Point(319, 322);
             this.BtnD.Name = "BtnD";
             this.BtnD.Size = new System.Drawing.Size(260, 58);
@@ -158,7 +163,7 @@ namespace BilgiYarismasi
             this.BtnSonraki.Name = "BtnSonraki";
             this.BtnSonraki.Size = new System.Drawing.Size(208, 58);
             this.BtnSonraki.TabIndex = 11;
-            this.BtnSonraki.Text = "Sonraki";
+            this.BtnSonraki.Text = "Başlat";
             this.BtnSonraki.UseVisualStyleBackColor = true;
             this.BtnSonraki.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -187,26 +192,40 @@ namespace BilgiYarismasi
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(528, 401);
+            this.label4.Location = new System.Drawing.Point(477, 391);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 20);
+            this.label4.Size = new System.Drawing.Size(102, 20);
             this.label4.TabIndex = 14;
-            this.label4.Text = "label4";
+            this.label4.Text = "Doğru Cevap";
+            this.label4.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(528, 437);
+            this.label5.Location = new System.Drawing.Point(473, 422);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 20);
+            this.label5.Size = new System.Drawing.Size(106, 20);
             this.label5.TabIndex = 15;
-            this.label5.Text = "label5";
+            this.label5.Text = "Kişinin Cevabı";
+            this.label5.Visible = false;
+            // 
+            // BtnYeni
+            // 
+            this.BtnYeni.Location = new System.Drawing.Point(606, 382);
+            this.BtnYeni.Name = "BtnYeni";
+            this.BtnYeni.Size = new System.Drawing.Size(187, 39);
+            this.BtnYeni.TabIndex = 16;
+            this.BtnYeni.Text = "Yeni Oyun Başlat";
+            this.BtnYeni.UseVisualStyleBackColor = true;
+            this.BtnYeni.Visible = false;
+            this.BtnYeni.Click += new System.EventHandler(this.BtnYeni_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 501);
+            this.Controls.Add(this.BtnYeni);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox2);
@@ -250,6 +269,7 @@ namespace BilgiYarismasi
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button BtnYeni;
     }
 }
 

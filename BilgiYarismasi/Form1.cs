@@ -17,7 +17,7 @@ namespace BilgiYarismasi
             InitializeComponent();
         }
 
-        int soruno = 0, dogru = 0, yanlis = 0;
+        int soruno = 0, dogru = 0, yanlis = 0;     
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -26,11 +26,10 @@ namespace BilgiYarismasi
             BtnC.Enabled = true;
             BtnD.Enabled = true;
             BtnSonraki.Enabled = false; //butona basınca sonrakinin özellgini engelledik
+            BtnSonraki.Text = "Soraki";
             
             pictureBox1.Visible = false; //sonrakine her bastgında görünümü gizledik
-            pictureBox2.Visible = false; 
-
-
+            pictureBox2.Visible = false;       
 
             //soruno = soruno + 1; aynı mantık
             soruno++;
@@ -65,6 +64,7 @@ namespace BilgiYarismasi
             }
             if (soruno == 4)
             {
+                LblSorunno.Text = "Bitti";
                 BtnSonraki.Text = "Sonuçlar";
                 BtnA.Enabled = false; //butona basınca sayac 4 ise şıkları engelledik
                 BtnB.Enabled = false;
@@ -72,6 +72,7 @@ namespace BilgiYarismasi
                 BtnD.Enabled = false;
                 BtnSonraki.Enabled = false;
                 MessageBox.Show("Doğru: " + dogru + "\n" + "Yanlış:" + yanlis);
+                BtnYeni.Visible = true;               
             }
 
         }
@@ -131,6 +132,24 @@ namespace BilgiYarismasi
 
 
 
+        }
+
+        private void BtnYeni_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = "Oyunu Başlatmak İçin Lütfen BAŞLAT Butonuna Basın";
+            BtnA.Text = "A";
+            BtnB.Text = "B";
+            BtnC.Text = "C";
+            BtnD.Text = "D";
+            soruno = 0;
+            LblSorunno.Text = soruno.ToString();
+            dogru = 0;
+            LblDogru.Text = dogru.ToString();
+            yanlis = 0;
+            LblYanlis.Text = yanlis.ToString();
+            BtnSonraki.Text = "Başlat";
+            BtnSonraki.Enabled = true;
+            BtnYeni.Visible = false;
         }
 
         private void BtnC_Click(object sender, EventArgs e)
