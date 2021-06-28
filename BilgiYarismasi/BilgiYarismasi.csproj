@@ -46,16 +46,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmGiris.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmGiris.Designer.cs">
+      <DependentUpon>FrmGiris.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmOyun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOyun.Designer.cs">
+      <DependentUpon>FrmOyun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSkorlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSkorlar.Designer.cs">
+      <DependentUpon>FrmSkorlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSkorlarim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSkorlarim.Designer.cs">
+      <DependentUpon>FrmSkorlarim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmKayitOl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKayitOl.Designer.cs">
+      <DependentUpon>FrmKayitOl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanici.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="sqlbaglantisi.cs" />
+    <EmbeddedResource Include="FrmGiris.resx">
+      <DependentUpon>FrmGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOyun.resx">
+      <DependentUpon>FrmOyun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSkorlar.resx">
+      <DependentUpon>FrmSkorlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSkorlarim.resx">
+      <DependentUpon>FrmSkorlarim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmKayitOl.resx">
+      <DependentUpon>FrmKayitOl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
