@@ -18,12 +18,12 @@ namespace BilgiYarismasi
             InitializeComponent();
         }
 
-        int soruno = 0, dogru = 0, yanlis = 0,bitissorusu=7;
-        SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-E9UTSVL;Initial Catalog=BilgiYarismasi;Integrated Security=True");
+        int soruno = 0, dogru = 0, yanlis = 0,bitisSoruSayisi;
+        sqlbaglantisi  bgl = new sqlbaglantisi();
         public string kullaniciAdi;
         //Kullanici kullanici = new Kullanici();//kullanıcı bilgisini aldık
 
-        private void button5_Click(object sender, EventArgs e)
+        private void BtnSonraki_Click(object sender, EventArgs e)
         {
             BtnA.Enabled = true; //butona basınca engellemeyi kaldırdık
             BtnB.Enabled = true;
@@ -48,29 +48,29 @@ namespace BilgiYarismasi
 
             if (soruno != 0)
             {
-                baglanti.Open();
-                SqlCommand komut = new SqlCommand("select * from Tbl_Sorular where Soru_id = @Soru_id", baglanti);
+                
+                SqlCommand komut = new SqlCommand("select * from Tbl_Sorular where Soru_id = @Soru_id", bgl.baglanti());
                 komut.Parameters.AddWithValue("@Soru_id", soruno);
                 SqlDataReader oku = komut.ExecuteReader();
                 while (oku.Read())
                 {
-                    richTextBox1.Text = oku["Soru"].ToString();
+                    rchSoru.Text = oku["Soru"].ToString();
                     BtnA.Text = oku["A"].ToString();
                     BtnB.Text = oku["B"].ToString();
                     BtnC.Text = oku["C"].ToString();
                     BtnD.Text = oku["D"].ToString();
-                    label4.Text = oku["Cevap"].ToString();
+                    lblDogruCevap.Text = oku["Cevap"].ToString();
                 }
-                baglanti.Close();
+               
             }
 
            
-            int sorusayisi = bitissorusu - 1;
+            int sorusayisi = bitisSoruSayisi - 1;
             int skor = dogru * 5;
             
-            if (soruno == bitissorusu)
+            if (soruno == bitisSoruSayisi)
             {
-                richTextBox1.Text = "";
+                rchSoru.Text = "";
                 LblSorunno.Text = "Bitti";
                 BtnSonraki.Text = "Sonuçlar";
                 BtnA.Enabled = false; //butona basınca sayac 4 ise şıkları engelledik
@@ -79,18 +79,18 @@ namespace BilgiYarismasi
                 BtnD.Enabled = false;
                 BtnSonraki.Enabled = false;
 
-                baglanti.Open();
-                SqlCommand skorkayit = new SqlCommand("INSERT INTO Tbl_Skorlar (Skor,Soru_Sayisi,Dogru_Sayisi,Yanlis_Sayisi,Kullanici_Adi) VALUES (@Skor,@Soru_Sayisi,@Dogru_Sayisi,@Yanlis_Sayisi,@Kullanici_Adi)", baglanti);
+                
+                SqlCommand skorkayit = new SqlCommand("INSERT INTO Tbl_Skorlar (Skor,Soru_Sayisi,Dogru_Sayisi,Yanlis_Sayisi,Kullanici_Adi) VALUES (@Skor,@Soru_Sayisi,@Dogru_Sayisi,@Yanlis_Sayisi,@Kullanici_Adi)", bgl.baglanti());
                 skorkayit.Parameters.AddWithValue("@Skor", skor);
                 skorkayit.Parameters.AddWithValue("@Soru_Sayisi", sorusayisi);
                 skorkayit.Parameters.AddWithValue("@Dogru_Sayisi", dogru);
                 skorkayit.Parameters.AddWithValue("@Yanlis_Sayisi", yanlis);
                 skorkayit.Parameters.AddWithValue("@Kullanici_Adi", lblkullaniciAdi.Text);
                 skorkayit.ExecuteNonQuery();
-                baglanti.Close();
+                bgl.baglanti().Close();
 
                 MessageBox.Show("Soru Sayısı "+ sorusayisi + " Doğru: " + dogru + "\n" + "Yanlış:" + yanlis + "Skorunuz:" + skor);
-                BtnYeni.Visible = true;
+                BtnYeniOyunBaslat.Visible = true;
 
             }
 
@@ -108,9 +108,9 @@ namespace BilgiYarismasi
             BtnSonraki.Enabled = true; // sonraki butonu aktif ettik
 
 
-            label5.Text = BtnA.Text; //label5 eiştirle a şıkkına yani verilen cevaba
+            lblKisiCevap.Text = BtnA.Text; //label5 eiştirle a şıkkına yani verilen cevaba
 
-            if (label4.Text == label5.Text) //eğer soru cevabı verilen cevaba eşit ise
+            if (lblDogruCevap.Text == lblKisiCevap.Text) //eğer soru cevabı verilen cevaba eşit ise
             {
                 dogru++; //dorğu sayısını 1 artır
                 LblDogru.Text = dogru.ToString(); //texte dorğu sayısını at dönüştür
@@ -134,9 +134,9 @@ namespace BilgiYarismasi
             BtnD.Enabled = false;
             BtnSonraki.Enabled = true;
 
-            label5.Text = BtnB.Text;
+            lblKisiCevap.Text = BtnB.Text;
 
-            if (label4.Text == label5.Text) 
+            if (lblDogruCevap.Text == lblKisiCevap.Text) 
             {
                 dogru++; 
                 LblDogru.Text = dogru.ToString(); 
@@ -156,27 +156,23 @@ namespace BilgiYarismasi
         private void FrmOyun_Load(object sender, EventArgs e)
         {
             //Kulanıcı adını çektik
-            lblkullaniciAdi.Text = kullaniciAdi; 
-            //lblkullaniciAdi.Text = kullanici.Kullanici_Adi1;
+            lblkullaniciAdi.Text = kullaniciAdi;
+            //lblkullaniciAdi.Text = kullanici.Kullanici_Adi1;          
 
 
 
-            //En yüksek skor
-            baglanti.Open();
-            SqlCommand komut1 = new SqlCommand("  SELECT TOP 1 MAX(Skor) AS Skor, Kullanici_Adi FROM Tbl_Skorlar GROUP BY Kullanici_Adi", baglanti);
+            //En yüksek skor            
+            SqlCommand komut1 = new SqlCommand("  SELECT TOP 1 MAX(Skor) AS Skor, Kullanici_Adi FROM Tbl_Skorlar GROUP BY Kullanici_Adi", bgl.baglanti());
             SqlDataReader dr1 = komut1.ExecuteReader();
             while (dr1.Read())
             {
                 lblEnYuksekSkor.Text = dr1[0] + " " + dr1[1];                
             }
 
-            baglanti.Close();
-
 
 
             //En yüksek skorum
-            baglanti.Open();
-            SqlCommand komut2 = new SqlCommand("SELECT MAX (Skor) as Skor FROM Tbl_Skorlar where Kullanici_Adi='@Kullanici_Adi'", baglanti);
+            SqlCommand komut2 = new SqlCommand("SELECT MAX (Skor) as Skor FROM Tbl_Skorlar where Kullanici_Adi='@Kullanici_Adi'", bgl.baglanti()); //burada sıkıntı var
             komut1.Parameters.AddWithValue("@Kullanici_Adi", lblkullaniciAdi.Text);
             SqlDataReader dr2 = komut2.ExecuteReader();           
 
@@ -185,7 +181,13 @@ namespace BilgiYarismasi
                 lblEnYuksekSkorum.Text = dr2[0].ToString();               
             }
 
-            baglanti.Close();
+            //bitiş soru sayısını ekldik
+            SqlCommand komut3 = new SqlCommand("  SELECT MAX(Soru_id)+1 FROM Tbl_Sorular", bgl.baglanti());
+            SqlDataReader dr3 = komut3.ExecuteReader();
+            while (dr3.Read())
+            {
+                bitisSoruSayisi = int.Parse(dr3[0].ToString());
+            }
 
 
 
@@ -200,7 +202,7 @@ namespace BilgiYarismasi
 
         private void BtnYeni_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = "Oyunu Başlatmak İçin Lütfen BAŞLAT Butonuna Basın";
+            rchSoru.Text = "Oyunu Başlatmak İçin Lütfen BAŞLAT Butonuna Basın";
             BtnA.Text = "A";
             BtnB.Text = "B";
             BtnC.Text = "C";
@@ -213,7 +215,7 @@ namespace BilgiYarismasi
             LblYanlis.Text = yanlis.ToString();
             BtnSonraki.Text = "Başlat";
             BtnSonraki.Enabled = true;
-            BtnYeni.Visible = false;
+            BtnYeniOyunBaslat.Visible = false;
             btnSkorlarim.Visible = true;
             lblEnYkskSkor.Visible = true;
             lblEnYuksekSkor.Visible = true;
@@ -229,9 +231,9 @@ namespace BilgiYarismasi
             BtnD.Enabled = false;
             BtnSonraki.Enabled = true;
 
-            label5.Text = BtnC.Text;
+            lblKisiCevap.Text = BtnC.Text;
 
-            if (label4.Text == label5.Text)
+            if (lblDogruCevap.Text == lblKisiCevap.Text)
             {
                 dogru++;
                 LblDogru.Text = dogru.ToString();
@@ -254,9 +256,9 @@ namespace BilgiYarismasi
             BtnD.Enabled = false;
             BtnSonraki.Enabled = true;            
 
-            label5.Text = BtnD.Text;
+            lblKisiCevap.Text = BtnD.Text;
 
-            if (label4.Text == label5.Text)
+            if (lblDogruCevap.Text == lblKisiCevap.Text)
             {
                 dogru++;
                 LblDogru.Text = dogru.ToString();

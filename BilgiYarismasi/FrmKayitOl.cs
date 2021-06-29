@@ -59,7 +59,7 @@ namespace BilgiYarismasi
                 kayitkomutu.ExecuteNonQuery();
                 bgl.baglanti().Close();
                 MessageBox.Show("Kayıt Başarılı Bir Şekilde Gerçekleşti Lütfen Giriş Yapınız");
-                FrmGiris fr = new FrmGiris();
+                FrmKullaniciGiris fr = new FrmKullaniciGiris();
                 fr.Show();
                 this.Hide();
             }

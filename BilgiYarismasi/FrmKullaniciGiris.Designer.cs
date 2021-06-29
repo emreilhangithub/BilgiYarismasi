@@ -1,7 +1,7 @@
 ﻿
 namespace BilgiYarismasi
 {
-    partial class FrmGiris
+    partial class FrmKullaniciGiris
     {
         /// <summary>
         /// Required designer variable.
@@ -36,6 +36,7 @@ namespace BilgiYarismasi
             this.txtKullaniciSifre = new System.Windows.Forms.TextBox();
             this.btnSkorlar = new System.Windows.Forms.Button();
             this.lnkKayitOl = new System.Windows.Forms.LinkLabel();
+            this.lblYoneticiGiris = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // btnGirisYap
@@ -54,6 +55,7 @@ namespace BilgiYarismasi
             this.txtKullaniciAdi.Name = "txtKullaniciAdi";
             this.txtKullaniciAdi.Size = new System.Drawing.Size(100, 20);
             this.txtKullaniciAdi.TabIndex = 1;
+            this.txtKullaniciAdi.Text = "test";
             // 
             // label1
             // 
@@ -79,6 +81,8 @@ namespace BilgiYarismasi
             this.txtKullaniciSifre.Name = "txtKullaniciSifre";
             this.txtKullaniciSifre.Size = new System.Drawing.Size(100, 20);
             this.txtKullaniciSifre.TabIndex = 3;
+            this.txtKullaniciSifre.Text = "123";
+            this.txtKullaniciSifre.UseSystemPasswordChar = true;
             // 
             // btnSkorlar
             // 
@@ -101,11 +105,23 @@ namespace BilgiYarismasi
             this.lnkKayitOl.Text = "Kayit Ol";
             this.lnkKayitOl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkUyeOl_LinkClicked);
             // 
-            // FrmGiris
+            // lblYoneticiGiris
+            // 
+            this.lblYoneticiGiris.AutoSize = true;
+            this.lblYoneticiGiris.Location = new System.Drawing.Point(148, 74);
+            this.lblYoneticiGiris.Name = "lblYoneticiGiris";
+            this.lblYoneticiGiris.Size = new System.Drawing.Size(68, 13);
+            this.lblYoneticiGiris.TabIndex = 7;
+            this.lblYoneticiGiris.TabStop = true;
+            this.lblYoneticiGiris.Text = "Yönetici Giriş";
+            this.lblYoneticiGiris.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblYoneticiGiris_LinkClicked);
+            // 
+            // FrmKullaniciGiris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(299, 146);
+            this.Controls.Add(this.lblYoneticiGiris);
             this.Controls.Add(this.lnkKayitOl);
             this.Controls.Add(this.btnSkorlar);
             this.Controls.Add(this.txtSifre);
@@ -113,7 +129,7 @@ namespace BilgiYarismasi
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtKullaniciAdi);
             this.Controls.Add(this.btnGirisYap);
-            this.Name = "FrmGiris";
+            this.Name = "FrmKullaniciGiris";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giriş Formu";
             this.ResumeLayout(false);
@@ -130,5 +146,6 @@ namespace BilgiYarismasi
         private System.Windows.Forms.TextBox txtKullaniciSifre;
         private System.Windows.Forms.Button btnSkorlar;
         private System.Windows.Forms.LinkLabel lnkKayitOl;
+        private System.Windows.Forms.LinkLabel lblYoneticiGiris;
     }
 }

@@ -14,6 +14,7 @@ namespace BilgiYarismasi
             SqlConnection baglan = new SqlConnection("Data Source=DESKTOP-E9UTSVL;Initial Catalog=BilgiYarismasi;Integrated Security=True");
             baglan.Open();
             return baglan;
-        }
+        }     
+
     }
 }

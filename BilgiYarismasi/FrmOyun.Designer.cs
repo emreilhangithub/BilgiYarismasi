@@ -30,7 +30,7 @@ namespace BilgiYarismasi
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOyun));
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rchSoru = new System.Windows.Forms.RichTextBox();
             this.BtnA = new System.Windows.Forms.Button();
             this.BtnB = new System.Windows.Forms.Button();
             this.BtnC = new System.Windows.Forms.Button();
@@ -44,9 +44,9 @@ namespace BilgiYarismasi
             this.BtnSonraki = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.BtnYeni = new System.Windows.Forms.Button();
+            this.lblDogruCevap = new System.Windows.Forms.Label();
+            this.lblKisiCevap = new System.Windows.Forms.Label();
+            this.BtnYeniOyunBaslat = new System.Windows.Forms.Button();
             this.lblkullaniciAdi = new System.Windows.Forms.Label();
             this.btnSkorlarim = new System.Windows.Forms.Button();
             this.lblEnYkskSkor = new System.Windows.Forms.Label();
@@ -57,14 +57,14 @@ namespace BilgiYarismasi
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // rchSoru
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(21, 8);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(366, 139);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "Oyunu Başlatmak İçin Lütfen BAŞLAT Butonuna Basın\nHer bir doğru 5 puandır başarıl" +
+            this.rchSoru.Location = new System.Drawing.Point(21, 8);
+            this.rchSoru.Margin = new System.Windows.Forms.Padding(2);
+            this.rchSoru.Name = "rchSoru";
+            this.rchSoru.Size = new System.Drawing.Size(366, 139);
+            this.rchSoru.TabIndex = 0;
+            this.rchSoru.Text = "Oyunu Başlatmak İçin Lütfen BAŞLAT Butonuna Basın\nHer bir doğru 5 puandır başarıl" +
     "ar ...";
             // 
             // BtnA
@@ -184,7 +184,7 @@ namespace BilgiYarismasi
             this.BtnSonraki.TabIndex = 11;
             this.BtnSonraki.Text = "Başlat";
             this.BtnSonraki.UseVisualStyleBackColor = true;
-            this.BtnSonraki.Click += new System.EventHandler(this.button5_Click);
+            this.BtnSonraki.Click += new System.EventHandler(this.BtnSonraki_Click);
             // 
             // pictureBox1
             // 
@@ -210,39 +210,39 @@ namespace BilgiYarismasi
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Visible = false;
             // 
-            // label4
+            // lblDogruCevap
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(318, 254);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 13);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Doğru Cevap";
-            this.label4.Visible = false;
+            this.lblDogruCevap.AutoSize = true;
+            this.lblDogruCevap.Location = new System.Drawing.Point(318, 254);
+            this.lblDogruCevap.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDogruCevap.Name = "lblDogruCevap";
+            this.lblDogruCevap.Size = new System.Drawing.Size(70, 13);
+            this.lblDogruCevap.TabIndex = 14;
+            this.lblDogruCevap.Text = "Doğru Cevap";
+            this.lblDogruCevap.Visible = false;
             // 
-            // label5
+            // lblKisiCevap
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(315, 274);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 13);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Kişinin Cevabı";
-            this.label5.Visible = false;
+            this.lblKisiCevap.AutoSize = true;
+            this.lblKisiCevap.Location = new System.Drawing.Point(315, 274);
+            this.lblKisiCevap.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblKisiCevap.Name = "lblKisiCevap";
+            this.lblKisiCevap.Size = new System.Drawing.Size(73, 13);
+            this.lblKisiCevap.TabIndex = 15;
+            this.lblKisiCevap.Text = "Kişinin Cevabı";
+            this.lblKisiCevap.Visible = false;
             // 
-            // BtnYeni
+            // BtnYeniOyunBaslat
             // 
-            this.BtnYeni.Location = new System.Drawing.Point(404, 248);
-            this.BtnYeni.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnYeni.Name = "BtnYeni";
-            this.BtnYeni.Size = new System.Drawing.Size(125, 25);
-            this.BtnYeni.TabIndex = 16;
-            this.BtnYeni.Text = "Yeni Oyun Başlat";
-            this.BtnYeni.UseVisualStyleBackColor = true;
-            this.BtnYeni.Visible = false;
-            this.BtnYeni.Click += new System.EventHandler(this.BtnYeni_Click);
+            this.BtnYeniOyunBaslat.Location = new System.Drawing.Point(404, 248);
+            this.BtnYeniOyunBaslat.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnYeniOyunBaslat.Name = "BtnYeniOyunBaslat";
+            this.BtnYeniOyunBaslat.Size = new System.Drawing.Size(125, 25);
+            this.BtnYeniOyunBaslat.TabIndex = 16;
+            this.BtnYeniOyunBaslat.Text = "Yeni Oyun Başlat";
+            this.BtnYeniOyunBaslat.UseVisualStyleBackColor = true;
+            this.BtnYeniOyunBaslat.Visible = false;
+            this.BtnYeniOyunBaslat.Click += new System.EventHandler(this.BtnYeni_Click);
             // 
             // lblkullaniciAdi
             // 
@@ -311,9 +311,9 @@ namespace BilgiYarismasi
             this.Controls.Add(this.lblEnYkskSkor);
             this.Controls.Add(this.btnSkorlarim);
             this.Controls.Add(this.lblkullaniciAdi);
-            this.Controls.Add(this.BtnYeni);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.BtnYeniOyunBaslat);
+            this.Controls.Add(this.lblKisiCevap);
+            this.Controls.Add(this.lblDogruCevap);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtnSonraki);
@@ -327,9 +327,10 @@ namespace BilgiYarismasi
             this.Controls.Add(this.BtnC);
             this.Controls.Add(this.BtnB);
             this.Controls.Add(this.BtnA);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rchSoru);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmOyun";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Oyun";
             this.Load += new System.EventHandler(this.FrmOyun_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -341,7 +342,7 @@ namespace BilgiYarismasi
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rchSoru;
         private System.Windows.Forms.Button BtnA;
         private System.Windows.Forms.Button BtnB;
         private System.Windows.Forms.Button BtnC;
@@ -355,9 +356,9 @@ namespace BilgiYarismasi
         private System.Windows.Forms.Button BtnSonraki;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button BtnYeni;
+        private System.Windows.Forms.Label lblDogruCevap;
+        private System.Windows.Forms.Label lblKisiCevap;
+        private System.Windows.Forms.Button BtnYeniOyunBaslat;
         private System.Windows.Forms.Label lblkullaniciAdi;
         private System.Windows.Forms.Button btnSkorlarim;
         private System.Windows.Forms.Label lblEnYkskSkor;

@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace BilgiYarismasi
 {
-    public partial class FrmGiris : Form
+    public partial class FrmKullaniciGiris : Form
     {
-        public FrmGiris()
+        public FrmKullaniciGiris()
         {
             InitializeComponent();
         }
@@ -63,6 +63,13 @@ namespace BilgiYarismasi
         private void lnkUyeOl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FrmUyeOl fr = new FrmUyeOl();
+            fr.Show();
+            this.Hide();
+        }
+
+        private void lblYoneticiGiris_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmYoneticiGiris fr = new FrmYoneticiGiris();
             fr.Show();
             this.Hide();
         }
