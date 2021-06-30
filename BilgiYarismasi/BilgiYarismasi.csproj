@@ -52,6 +52,12 @@
     <Compile Include="FrmKategoriEkle.Designer.cs">
       <DependentUpon>FrmKategoriEkle.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmKategoriGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKategoriGuncelle.Designer.cs">
+      <DependentUpon>FrmKategoriGuncelle.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmKullaniciGiris.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,7 @@
     <Compile Include="FrmKayitOl.Designer.cs">
       <DependentUpon>FrmKayitOl.cs</DependentUpon>
     </Compile>
+    <Compile Include="VeriTasima.cs" />
     <Compile Include="FrmYoneticiEkrani.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +110,9 @@
     <Compile Include="Yonetici.cs" />
     <EmbeddedResource Include="FrmKategoriEkle.resx">
       <DependentUpon>FrmKategoriEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmKategoriGuncelle.resx">
+      <DependentUpon>FrmKategoriGuncelle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmKullaniciGiris.resx">
       <DependentUpon>FrmKullaniciGiris.cs</DependentUpon>

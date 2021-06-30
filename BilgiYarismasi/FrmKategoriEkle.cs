@@ -38,7 +38,7 @@ namespace BilgiYarismasi
 
             if
                (
-               string.IsNullOrEmpty(txtKategoriAdi.Text)              
+               string.IsNullOrEmpty(txtKategoriAdi.Text)
                )
             {
                 MessageBox.Show("Lütfen Kategori Adı Giriniz");
@@ -48,7 +48,7 @@ namespace BilgiYarismasi
             kategoriMukerrerKontrol();
             if (mukerrerKategoriDurum == false) //yoksa kayit et
             {
-                SqlCommand kaydetkomutu = new SqlCommand("INSERT INTO Tbl_Kategoriler (Kategori_Adi) VALUES(@Kategori_Adi)", bgl.baglanti());
+                SqlCommand kaydetkomutu = new SqlCommand("INSERT INTO Tbl_Kategoriler (Kategori_Adi,Kategori_Durum) VALUES(@Kategori_Adi,1)", bgl.baglanti());
                 kaydetkomutu.Parameters.AddWithValue("@Kategori_Adi", kategoriler.Kategori_Adi1);
                 int adet = kaydetkomutu.ExecuteNonQuery();
                 if (adet > 0)
@@ -61,7 +61,7 @@ namespace BilgiYarismasi
                 else
                 {
                     MessageBox.Show("Ekleme Başarısız");
-                }                
+                }
                 bgl.baglanti().Close();
             }
             else
@@ -69,7 +69,7 @@ namespace BilgiYarismasi
                 MessageBox.Show("Kayıtlı Müşteri Numarası tekrar deneyiniz");
             }
 
-           
+
         }
     }
 }

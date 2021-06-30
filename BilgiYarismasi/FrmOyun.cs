@@ -49,8 +49,8 @@ namespace BilgiYarismasi
             if (soruno != 0)
             {
                 
-                SqlCommand komut = new SqlCommand("select * from Tbl_Sorular where Soru_id = @Soru_id", bgl.baglanti());
-                komut.Parameters.AddWithValue("@Soru_id", soruno);
+                SqlCommand komut = new SqlCommand("select * from Tbl_Sorular where Soru_No = @Soru_No", bgl.baglanti());
+                komut.Parameters.AddWithValue("@Soru_No", soruno);
                 SqlDataReader oku = komut.ExecuteReader();
                 while (oku.Read())
                 {
@@ -182,7 +182,7 @@ namespace BilgiYarismasi
             }
 
             //bitiş soru sayısını ekldik
-            SqlCommand komut3 = new SqlCommand("  SELECT MAX(Soru_id)+1 FROM Tbl_Sorular", bgl.baglanti());
+            SqlCommand komut3 = new SqlCommand("  SELECT MAX(Soru_No)+1 FROM Tbl_Sorular", bgl.baglanti());
             SqlDataReader dr3 = komut3.ExecuteReader();
             while (dr3.Read())
             {

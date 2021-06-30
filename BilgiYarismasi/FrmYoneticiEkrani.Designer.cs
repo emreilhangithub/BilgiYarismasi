@@ -55,10 +55,15 @@ namespace BilgiYarismasi
             this.rchSoru = new System.Windows.Forms.RichTextBox();
             this.btnAnasayfa = new System.Windows.Forms.Button();
             this.btnTemizle = new System.Windows.Forms.Button();
-            this.cmbKategori = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnKategoriListele = new System.Windows.Forms.Button();
+            this.txtSoruNo = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btnNumaraVer = new System.Windows.Forms.Button();
+            this.btnKategoriGuncelle = new System.Windows.Forms.Button();
+            this.btnKategoriPasifYap = new System.Windows.Forms.Button();
             this.btnKategoriEkle = new System.Windows.Forms.Button();
+            this.btnKategoriListele = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmbKategori = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +73,7 @@ namespace BilgiYarismasi
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.MenuHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 368);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 406);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(821, 170);
@@ -77,7 +82,7 @@ namespace BilgiYarismasi
             // 
             // btnListele
             // 
-            this.btnListele.Location = new System.Drawing.Point(696, 52);
+            this.btnListele.Location = new System.Drawing.Point(566, 4);
             this.btnListele.Margin = new System.Windows.Forms.Padding(4);
             this.btnListele.Name = "btnListele";
             this.btnListele.Size = new System.Drawing.Size(112, 34);
@@ -88,7 +93,7 @@ namespace BilgiYarismasi
             // 
             // btnEkle
             // 
-            this.btnEkle.Location = new System.Drawing.Point(696, 100);
+            this.btnEkle.Location = new System.Drawing.Point(686, 4);
             this.btnEkle.Margin = new System.Windows.Forms.Padding(4);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(112, 34);
@@ -99,7 +104,7 @@ namespace BilgiYarismasi
             // 
             // btnGuncelle
             // 
-            this.btnGuncelle.Location = new System.Drawing.Point(696, 148);
+            this.btnGuncelle.Location = new System.Drawing.Point(566, 46);
             this.btnGuncelle.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(112, 34);
@@ -110,7 +115,7 @@ namespace BilgiYarismasi
             // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(696, 196);
+            this.btnSil.Location = new System.Drawing.Point(686, 46);
             this.btnSil.Margin = new System.Windows.Forms.Padding(4);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(112, 34);
@@ -121,7 +126,7 @@ namespace BilgiYarismasi
             // 
             // btnAra
             // 
-            this.btnAra.Location = new System.Drawing.Point(705, 327);
+            this.btnAra.Location = new System.Drawing.Point(696, 364);
             this.btnAra.Margin = new System.Windows.Forms.Padding(4);
             this.btnAra.Name = "btnAra";
             this.btnAra.Size = new System.Drawing.Size(112, 34);
@@ -132,7 +137,7 @@ namespace BilgiYarismasi
             // 
             // txtSoruArama
             // 
-            this.txtSoruArama.Location = new System.Drawing.Point(598, 332);
+            this.txtSoruArama.Location = new System.Drawing.Point(589, 369);
             this.txtSoruArama.Name = "txtSoruArama";
             this.txtSoruArama.Size = new System.Drawing.Size(100, 27);
             this.txtSoruArama.TabIndex = 6;
@@ -140,7 +145,7 @@ namespace BilgiYarismasi
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(545, 335);
+            this.label1.Location = new System.Drawing.Point(536, 372);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 19);
             this.label1.TabIndex = 7;
@@ -158,7 +163,7 @@ namespace BilgiYarismasi
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 37);
+            this.label3.Location = new System.Drawing.Point(27, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 19);
             this.label3.TabIndex = 9;
@@ -167,7 +172,7 @@ namespace BilgiYarismasi
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 121);
+            this.label4.Location = new System.Drawing.Point(26, 194);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 19);
             this.label4.TabIndex = 10;
@@ -176,7 +181,7 @@ namespace BilgiYarismasi
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 157);
+            this.label5.Location = new System.Drawing.Point(26, 230);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 19);
             this.label5.TabIndex = 11;
@@ -185,7 +190,7 @@ namespace BilgiYarismasi
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 193);
+            this.label6.Location = new System.Drawing.Point(28, 266);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 19);
             this.label6.TabIndex = 12;
@@ -194,7 +199,7 @@ namespace BilgiYarismasi
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(26, 229);
+            this.label7.Location = new System.Drawing.Point(26, 302);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 19);
             this.label7.TabIndex = 13;
@@ -203,7 +208,7 @@ namespace BilgiYarismasi
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 265);
+            this.label8.Location = new System.Drawing.Point(27, 338);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 19);
             this.label8.TabIndex = 14;
@@ -212,7 +217,7 @@ namespace BilgiYarismasi
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(18, 301);
+            this.label9.Location = new System.Drawing.Point(18, 374);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 19);
             this.label9.TabIndex = 15;
@@ -228,49 +233,49 @@ namespace BilgiYarismasi
             // 
             // txtA
             // 
-            this.txtA.Location = new System.Drawing.Point(92, 121);
+            this.txtA.Location = new System.Drawing.Point(92, 194);
             this.txtA.Name = "txtA";
             this.txtA.Size = new System.Drawing.Size(202, 27);
             this.txtA.TabIndex = 17;
             // 
             // txtB
             // 
-            this.txtB.Location = new System.Drawing.Point(92, 157);
+            this.txtB.Location = new System.Drawing.Point(92, 230);
             this.txtB.Name = "txtB";
             this.txtB.Size = new System.Drawing.Size(202, 27);
             this.txtB.TabIndex = 18;
             // 
             // txtC
             // 
-            this.txtC.Location = new System.Drawing.Point(92, 193);
+            this.txtC.Location = new System.Drawing.Point(92, 266);
             this.txtC.Name = "txtC";
             this.txtC.Size = new System.Drawing.Size(202, 27);
             this.txtC.TabIndex = 19;
             // 
             // txtD
             // 
-            this.txtD.Location = new System.Drawing.Point(92, 229);
+            this.txtD.Location = new System.Drawing.Point(92, 302);
             this.txtD.Name = "txtD";
             this.txtD.Size = new System.Drawing.Size(202, 27);
             this.txtD.TabIndex = 20;
             // 
             // txtE
             // 
-            this.txtE.Location = new System.Drawing.Point(92, 265);
+            this.txtE.Location = new System.Drawing.Point(92, 338);
             this.txtE.Name = "txtE";
             this.txtE.Size = new System.Drawing.Size(202, 27);
             this.txtE.TabIndex = 21;
             // 
             // txtCevap
             // 
-            this.txtCevap.Location = new System.Drawing.Point(92, 301);
+            this.txtCevap.Location = new System.Drawing.Point(92, 374);
             this.txtCevap.Name = "txtCevap";
             this.txtCevap.Size = new System.Drawing.Size(202, 27);
             this.txtCevap.TabIndex = 22;
             // 
             // rchSoru
             // 
-            this.rchSoru.Location = new System.Drawing.Point(92, 37);
+            this.rchSoru.Location = new System.Drawing.Point(92, 74);
             this.rchSoru.Name = "rchSoru";
             this.rchSoru.Size = new System.Drawing.Size(391, 78);
             this.rchSoru.TabIndex = 23;
@@ -278,7 +283,7 @@ namespace BilgiYarismasi
             // 
             // btnAnasayfa
             // 
-            this.btnAnasayfa.Location = new System.Drawing.Point(696, 4);
+            this.btnAnasayfa.Location = new System.Drawing.Point(686, 88);
             this.btnAnasayfa.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnasayfa.Name = "btnAnasayfa";
             this.btnAnasayfa.Size = new System.Drawing.Size(112, 34);
@@ -289,7 +294,7 @@ namespace BilgiYarismasi
             // 
             // btnTemizle
             // 
-            this.btnTemizle.Location = new System.Drawing.Point(696, 244);
+            this.btnTemizle.Location = new System.Drawing.Point(566, 88);
             this.btnTemizle.Margin = new System.Windows.Forms.Padding(4);
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(112, 34);
@@ -298,54 +303,102 @@ namespace BilgiYarismasi
             this.btnTemizle.UseVisualStyleBackColor = true;
             this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
-            // cmbKategori
+            // txtSoruNo
             // 
-            this.cmbKategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbKategori.FormattingEnabled = true;
-            this.cmbKategori.Location = new System.Drawing.Point(92, 334);
-            this.cmbKategori.Name = "cmbKategori";
-            this.cmbKategori.Size = new System.Drawing.Size(202, 27);
-            this.cmbKategori.TabIndex = 26;
+            this.txtSoruNo.Enabled = false;
+            this.txtSoruNo.Location = new System.Drawing.Point(92, 36);
+            this.txtSoruNo.Name = "txtSoruNo";
+            this.txtSoruNo.Size = new System.Drawing.Size(202, 27);
+            this.txtSoruNo.TabIndex = 30;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 39);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(71, 19);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "Soru No:";
+            // 
+            // btnNumaraVer
+            // 
+            this.btnNumaraVer.Location = new System.Drawing.Point(301, 37);
+            this.btnNumaraVer.Name = "btnNumaraVer";
+            this.btnNumaraVer.Size = new System.Drawing.Size(109, 23);
+            this.btnNumaraVer.TabIndex = 32;
+            this.btnNumaraVer.Text = "Numara Ver";
+            this.btnNumaraVer.UseVisualStyleBackColor = true;
+            this.btnNumaraVer.Click += new System.EventHandler(this.btnNumaraVer_Click);
+            // 
+            // btnKategoriGuncelle
+            // 
+            this.btnKategoriGuncelle.Location = new System.Drawing.Point(589, 160);
+            this.btnKategoriGuncelle.Name = "btnKategoriGuncelle";
+            this.btnKategoriGuncelle.Size = new System.Drawing.Size(36, 26);
+            this.btnKategoriGuncelle.TabIndex = 40;
+            this.btnKategoriGuncelle.Text = "G";
+            this.btnKategoriGuncelle.UseVisualStyleBackColor = true;
+            // 
+            // btnKategoriPasifYap
+            // 
+            this.btnKategoriPasifYap.Location = new System.Drawing.Point(540, 160);
+            this.btnKategoriPasifYap.Name = "btnKategoriPasifYap";
+            this.btnKategoriPasifYap.Size = new System.Drawing.Size(36, 26);
+            this.btnKategoriPasifYap.TabIndex = 39;
+            this.btnKategoriPasifYap.Text = "-";
+            this.btnKategoriPasifYap.UseVisualStyleBackColor = true;
+            // 
+            // btnKategoriEkle
+            // 
+            this.btnKategoriEkle.Location = new System.Drawing.Point(490, 160);
+            this.btnKategoriEkle.Name = "btnKategoriEkle";
+            this.btnKategoriEkle.Size = new System.Drawing.Size(36, 26);
+            this.btnKategoriEkle.TabIndex = 38;
+            this.btnKategoriEkle.Text = "+";
+            this.btnKategoriEkle.UseVisualStyleBackColor = true;
+            // 
+            // btnKategoriListele
+            // 
+            this.btnKategoriListele.Location = new System.Drawing.Point(301, 159);
+            this.btnKategoriListele.Margin = new System.Windows.Forms.Padding(4);
+            this.btnKategoriListele.Name = "btnKategoriListele";
+            this.btnKategoriListele.Size = new System.Drawing.Size(182, 27);
+            this.btnKategoriListele.TabIndex = 37;
+            this.btnKategoriListele.Text = "Kategoriye Göre Listele";
+            this.btnKategoriListele.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(0, 337);
+            this.label10.Location = new System.Drawing.Point(0, 162);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 19);
-            this.label10.TabIndex = 27;
+            this.label10.TabIndex = 36;
             this.label10.Text = "Kategori:";
             // 
-            // btnKategoriListele
+            // cmbKategori
             // 
-            this.btnKategoriListele.Location = new System.Drawing.Point(301, 334);
-            this.btnKategoriListele.Margin = new System.Windows.Forms.Padding(4);
-            this.btnKategoriListele.Name = "btnKategoriListele";
-            this.btnKategoriListele.Size = new System.Drawing.Size(182, 27);
-            this.btnKategoriListele.TabIndex = 28;
-            this.btnKategoriListele.Text = "Kategoriye Göre Listele";
-            this.btnKategoriListele.UseVisualStyleBackColor = true;
-            this.btnKategoriListele.Click += new System.EventHandler(this.btnKategoriListele_Click);
-            // 
-            // btnKategoriEkle
-            // 
-            this.btnKategoriEkle.Location = new System.Drawing.Point(490, 335);
-            this.btnKategoriEkle.Name = "btnKategoriEkle";
-            this.btnKategoriEkle.Size = new System.Drawing.Size(36, 26);
-            this.btnKategoriEkle.TabIndex = 29;
-            this.btnKategoriEkle.Text = "+";
-            this.btnKategoriEkle.UseVisualStyleBackColor = true;
-            this.btnKategoriEkle.Click += new System.EventHandler(this.btnKategoriEkle_Click);
+            this.cmbKategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbKategori.FormattingEnabled = true;
+            this.cmbKategori.Location = new System.Drawing.Point(92, 159);
+            this.cmbKategori.Name = "cmbKategori";
+            this.cmbKategori.Size = new System.Drawing.Size(202, 27);
+            this.cmbKategori.TabIndex = 35;
             // 
             // FrmYoneticiEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 538);
+            this.ClientSize = new System.Drawing.Size(821, 576);
+            this.Controls.Add(this.btnKategoriGuncelle);
+            this.Controls.Add(this.btnKategoriPasifYap);
             this.Controls.Add(this.btnKategoriEkle);
             this.Controls.Add(this.btnKategoriListele);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.cmbKategori);
+            this.Controls.Add(this.btnNumaraVer);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtSoruNo);
             this.Controls.Add(this.btnTemizle);
             this.Controls.Add(this.btnAnasayfa);
             this.Controls.Add(this.rchSoru);
@@ -412,9 +465,14 @@ namespace BilgiYarismasi
         private System.Windows.Forms.RichTextBox rchSoru;
         private System.Windows.Forms.Button btnAnasayfa;
         private System.Windows.Forms.Button btnTemizle;
-        private System.Windows.Forms.ComboBox cmbKategori;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnKategoriListele;
+        private System.Windows.Forms.TextBox txtSoruNo;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnNumaraVer;
+        private System.Windows.Forms.Button btnKategoriGuncelle;
+        private System.Windows.Forms.Button btnKategoriPasifYap;
         private System.Windows.Forms.Button btnKategoriEkle;
+        private System.Windows.Forms.Button btnKategoriListele;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cmbKategori;
     }
 }
