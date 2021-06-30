@@ -317,11 +317,5 @@ namespace BilgiYarismasi
             fr.ShowDialog();
             kategoriGetir();
         }
-
-        private void btnYoneticıDuzenle_Click(object sender, EventArgs e)
-        {
-            FrmKullaniciDuzenle fr = new FrmKullaniciDuzenle();
-            fr.Show();
-        }
     }
 }

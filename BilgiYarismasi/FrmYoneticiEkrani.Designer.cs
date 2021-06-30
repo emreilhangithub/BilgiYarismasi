@@ -338,6 +338,7 @@ namespace BilgiYarismasi
             this.btnKategoriGuncelle.TabIndex = 40;
             this.btnKategoriGuncelle.Text = "G";
             this.btnKategoriGuncelle.UseVisualStyleBackColor = true;
+            this.btnKategoriGuncelle.Click += new System.EventHandler(this.btnKategoriGuncelle_Click);
             // 
             // btnKategoriPasifYap
             // 
@@ -347,6 +348,7 @@ namespace BilgiYarismasi
             this.btnKategoriPasifYap.TabIndex = 39;
             this.btnKategoriPasifYap.Text = "-";
             this.btnKategoriPasifYap.UseVisualStyleBackColor = true;
+            this.btnKategoriPasifYap.Click += new System.EventHandler(this.btnKategoriPasifYap_Click);
             // 
             // btnKategoriEkle
             // 
@@ -356,6 +358,7 @@ namespace BilgiYarismasi
             this.btnKategoriEkle.TabIndex = 38;
             this.btnKategoriEkle.Text = "+";
             this.btnKategoriEkle.UseVisualStyleBackColor = true;
+            this.btnKategoriEkle.Click += new System.EventHandler(this.btnKategoriEkle_Click);
             // 
             // btnKategoriListele
             // 
@@ -366,6 +369,7 @@ namespace BilgiYarismasi
             this.btnKategoriListele.TabIndex = 37;
             this.btnKategoriListele.Text = "Kategoriye Göre Listele";
             this.btnKategoriListele.UseVisualStyleBackColor = true;
+            this.btnKategoriListele.Click += new System.EventHandler(this.btnKategoriListele_Click);
             // 
             // label10
             // 

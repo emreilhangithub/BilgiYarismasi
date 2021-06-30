@@ -23,11 +23,10 @@ namespace BilgiYarismasi
         private void FrmSkorlar_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();            
-            SqlDataAdapter da = new SqlDataAdapter("Select Kullanici_Adi,Soru_Sayisi,Dogru_Sayisi,Yanlis_Sayisi,Skor from Tbl_Skorlar ORDER BY Skor DESC", bgl.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter("SELECT kullanici.Kullanici_Adi,Soru_Sayisi,Dogru_Sayisi,Yanlis_Sayisi,Skor FROM Tbl_Skorlar as skor INNER JOIN Tbl_Kullanicilar as kullanici ON skor.Kullanici_Id = kullanici.Kullanici_Id;", bgl.baglanti());
             da.Fill(dt);           
             dataGridView1.DataSource = dt;
             bgl.baglanti().Close();
-
         }
     }
 }

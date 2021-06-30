@@ -42,9 +42,9 @@ namespace BilgiYarismasi
             {
                 MessageBox.Show("Giriş başarılı Ana Sayfaya Hoş Geldiniz");              
                 FrmOyun fr = new FrmOyun();
-                kullanici.Kullanici_Adi1 = txtKullaniciAdi.Text; //set ettik 
-                fr.kullaniciAdi = kullanici.Kullanici_Adi1;
-                //fr.kullaniciAdi = txtKullaniciAdi.Text; //bu oop den gelse olmuyor mu sorulacak
+                //kullanici.Kullanici_Adi1 = txtKullaniciAdi.Text; //set ettik oop ile uzun yol
+                VeriTasima.kullaniciAdi = txtKullaniciAdi.Text;//set
+                //fr.kullaniciAdi = VeriTasima.kullaniciAdi;  //get ettik istersen burdan çekeriz ama gerek yok içerden istedigin yerde cagır
                 fr.Show();
                 this.Hide();
             }

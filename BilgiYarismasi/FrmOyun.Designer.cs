@@ -42,19 +42,22 @@ namespace BilgiYarismasi
             this.LblDogru = new System.Windows.Forms.Label();
             this.LblYanlis = new System.Windows.Forms.Label();
             this.BtnSonraki = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pctDogruCevap = new System.Windows.Forms.PictureBox();
+            this.pctYanlisCevap = new System.Windows.Forms.PictureBox();
             this.lblDogruCevap = new System.Windows.Forms.Label();
             this.lblKisiCevap = new System.Windows.Forms.Label();
             this.BtnYeniOyunBaslat = new System.Windows.Forms.Button();
-            this.lblkullaniciAdi = new System.Windows.Forms.Label();
-            this.btnSkorlarim = new System.Windows.Forms.Button();
-            this.lblEnYkskSkor = new System.Windows.Forms.Label();
-            this.lblEnYkskSkrm = new System.Windows.Forms.Label();
-            this.lblEnYuksekSkor = new System.Windows.Forms.Label();
+            this.btnBitir = new System.Windows.Forms.Button();
+            this.BtnE = new System.Windows.Forms.Button();
+            this.pnlSkorlar = new System.Windows.Forms.Panel();
             this.lblEnYuksekSkorum = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.lblEnYuksekSkor = new System.Windows.Forms.Label();
+            this.lblEnYkskSkrm = new System.Windows.Forms.Label();
+            this.lblEnYkskSkor = new System.Windows.Forms.Label();
+            this.btnSkorlarim = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pctDogruCevap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctYanlisCevap)).BeginInit();
+            this.pnlSkorlar.SuspendLayout();
             this.SuspendLayout();
             // 
             // rchSoru
@@ -73,7 +76,7 @@ namespace BilgiYarismasi
             this.BtnA.Location = new System.Drawing.Point(21, 159);
             this.BtnA.Margin = new System.Windows.Forms.Padding(2);
             this.BtnA.Name = "BtnA";
-            this.BtnA.Size = new System.Drawing.Size(176, 38);
+            this.BtnA.Size = new System.Drawing.Size(120, 38);
             this.BtnA.TabIndex = 1;
             this.BtnA.Text = "A";
             this.BtnA.UseVisualStyleBackColor = true;
@@ -82,10 +85,10 @@ namespace BilgiYarismasi
             // BtnB
             // 
             this.BtnB.Enabled = false;
-            this.BtnB.Location = new System.Drawing.Point(213, 159);
+            this.BtnB.Location = new System.Drawing.Point(158, 159);
             this.BtnB.Margin = new System.Windows.Forms.Padding(2);
             this.BtnB.Name = "BtnB";
-            this.BtnB.Size = new System.Drawing.Size(173, 38);
+            this.BtnB.Size = new System.Drawing.Size(96, 38);
             this.BtnB.TabIndex = 2;
             this.BtnB.Text = "B";
             this.BtnB.UseVisualStyleBackColor = true;
@@ -94,10 +97,10 @@ namespace BilgiYarismasi
             // BtnC
             // 
             this.BtnC.Enabled = false;
-            this.BtnC.Location = new System.Drawing.Point(21, 209);
+            this.BtnC.Location = new System.Drawing.Point(269, 159);
             this.BtnC.Margin = new System.Windows.Forms.Padding(2);
             this.BtnC.Name = "BtnC";
-            this.BtnC.Size = new System.Drawing.Size(176, 38);
+            this.BtnC.Size = new System.Drawing.Size(105, 38);
             this.BtnC.TabIndex = 3;
             this.BtnC.Text = "C";
             this.BtnC.UseVisualStyleBackColor = true;
@@ -106,7 +109,7 @@ namespace BilgiYarismasi
             // BtnD
             // 
             this.BtnD.Enabled = false;
-            this.BtnD.Location = new System.Drawing.Point(213, 209);
+            this.BtnD.Location = new System.Drawing.Point(21, 201);
             this.BtnD.Margin = new System.Windows.Forms.Padding(2);
             this.BtnD.Name = "BtnD";
             this.BtnD.Size = new System.Drawing.Size(173, 38);
@@ -186,29 +189,29 @@ namespace BilgiYarismasi
             this.BtnSonraki.UseVisualStyleBackColor = true;
             this.BtnSonraki.Click += new System.EventHandler(this.BtnSonraki_Click);
             // 
-            // pictureBox1
+            // pctDogruCevap
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(390, 159);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 77);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
+            this.pctDogruCevap.Image = ((System.Drawing.Image)(resources.GetObject("pctDogruCevap.Image")));
+            this.pctDogruCevap.Location = new System.Drawing.Point(389, 190);
+            this.pctDogruCevap.Margin = new System.Windows.Forms.Padding(2);
+            this.pctDogruCevap.Name = "pctDogruCevap";
+            this.pctDogruCevap.Size = new System.Drawing.Size(65, 77);
+            this.pctDogruCevap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctDogruCevap.TabIndex = 12;
+            this.pctDogruCevap.TabStop = false;
+            this.pctDogruCevap.Visible = false;
             // 
-            // pictureBox2
+            // pctYanlisCevap
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(463, 159);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(65, 77);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
+            this.pctYanlisCevap.Image = ((System.Drawing.Image)(resources.GetObject("pctYanlisCevap.Image")));
+            this.pctYanlisCevap.Location = new System.Drawing.Point(462, 190);
+            this.pctYanlisCevap.Margin = new System.Windows.Forms.Padding(2);
+            this.pctYanlisCevap.Name = "pctYanlisCevap";
+            this.pctYanlisCevap.Size = new System.Drawing.Size(65, 77);
+            this.pctYanlisCevap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctYanlisCevap.TabIndex = 13;
+            this.pctYanlisCevap.TabStop = false;
+            this.pctYanlisCevap.Visible = false;
             // 
             // lblDogruCevap
             // 
@@ -234,7 +237,7 @@ namespace BilgiYarismasi
             // 
             // BtnYeniOyunBaslat
             // 
-            this.BtnYeniOyunBaslat.Location = new System.Drawing.Point(404, 248);
+            this.BtnYeniOyunBaslat.Location = new System.Drawing.Point(403, 279);
             this.BtnYeniOyunBaslat.Margin = new System.Windows.Forms.Padding(2);
             this.BtnYeniOyunBaslat.Name = "BtnYeniOyunBaslat";
             this.BtnYeniOyunBaslat.Size = new System.Drawing.Size(125, 25);
@@ -244,78 +247,101 @@ namespace BilgiYarismasi
             this.BtnYeniOyunBaslat.Visible = false;
             this.BtnYeniOyunBaslat.Click += new System.EventHandler(this.BtnYeni_Click);
             // 
-            // lblkullaniciAdi
+            // btnBitir
             // 
-            this.lblkullaniciAdi.AutoSize = true;
-            this.lblkullaniciAdi.Location = new System.Drawing.Point(42, 299);
-            this.lblkullaniciAdi.Name = "lblkullaniciAdi";
-            this.lblkullaniciAdi.Size = new System.Drawing.Size(64, 13);
-            this.lblkullaniciAdi.TabIndex = 17;
-            this.lblkullaniciAdi.Text = "Kullanici Adı";
-            this.lblkullaniciAdi.Visible = false;
+            this.btnBitir.Location = new System.Drawing.Point(391, 139);
+            this.btnBitir.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBitir.Name = "btnBitir";
+            this.btnBitir.Size = new System.Drawing.Size(139, 38);
+            this.btnBitir.TabIndex = 23;
+            this.btnBitir.Text = "Bitir";
+            this.btnBitir.UseVisualStyleBackColor = true;
+            this.btnBitir.Visible = false;
+            this.btnBitir.Click += new System.EventHandler(this.btnBitir_Click);
             // 
-            // btnSkorlarim
+            // BtnE
             // 
-            this.btnSkorlarim.Location = new System.Drawing.Point(144, 294);
-            this.btnSkorlarim.Name = "btnSkorlarim";
-            this.btnSkorlarim.Size = new System.Drawing.Size(75, 23);
-            this.btnSkorlarim.TabIndex = 18;
-            this.btnSkorlarim.Text = "Skorlarım";
-            this.btnSkorlarim.UseVisualStyleBackColor = true;
-            this.btnSkorlarim.Click += new System.EventHandler(this.btnSkorlarim_Click);
+            this.BtnE.Enabled = false;
+            this.BtnE.Location = new System.Drawing.Point(198, 201);
+            this.BtnE.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnE.Name = "BtnE";
+            this.BtnE.Size = new System.Drawing.Size(176, 38);
+            this.BtnE.TabIndex = 24;
+            this.BtnE.Text = "E";
+            this.BtnE.UseVisualStyleBackColor = true;
+            this.BtnE.Click += new System.EventHandler(this.BtnE_Click);
             // 
-            // lblEnYkskSkor
+            // pnlSkorlar
             // 
-            this.lblEnYkskSkor.AutoSize = true;
-            this.lblEnYkskSkor.Location = new System.Drawing.Point(107, 260);
-            this.lblEnYkskSkor.Name = "lblEnYkskSkor";
-            this.lblEnYkskSkor.Size = new System.Drawing.Size(90, 13);
-            this.lblEnYkskSkor.TabIndex = 19;
-            this.lblEnYkskSkor.Text = "En Yüksek Skor=";
-            // 
-            // lblEnYkskSkrm
-            // 
-            this.lblEnYkskSkrm.AutoSize = true;
-            this.lblEnYkskSkrm.Location = new System.Drawing.Point(93, 274);
-            this.lblEnYkskSkrm.Name = "lblEnYkskSkrm";
-            this.lblEnYkskSkrm.Size = new System.Drawing.Size(107, 13);
-            this.lblEnYkskSkrm.TabIndex = 20;
-            this.lblEnYkskSkrm.Text = "En Yüksek Skorum =";
-            // 
-            // lblEnYuksekSkor
-            // 
-            this.lblEnYuksekSkor.AutoSize = true;
-            this.lblEnYuksekSkor.Location = new System.Drawing.Point(206, 260);
-            this.lblEnYuksekSkor.Name = "lblEnYuksekSkor";
-            this.lblEnYuksekSkor.Size = new System.Drawing.Size(13, 13);
-            this.lblEnYuksekSkor.TabIndex = 21;
-            this.lblEnYuksekSkor.Text = "0";
+            this.pnlSkorlar.Controls.Add(this.lblEnYuksekSkorum);
+            this.pnlSkorlar.Controls.Add(this.lblEnYkskSkor);
+            this.pnlSkorlar.Controls.Add(this.lblEnYuksekSkor);
+            this.pnlSkorlar.Controls.Add(this.btnSkorlarim);
+            this.pnlSkorlar.Controls.Add(this.lblEnYkskSkrm);
+            this.pnlSkorlar.Location = new System.Drawing.Point(54, 244);
+            this.pnlSkorlar.Name = "pnlSkorlar";
+            this.pnlSkorlar.Size = new System.Drawing.Size(200, 70);
+            this.pnlSkorlar.TabIndex = 25;
             // 
             // lblEnYuksekSkorum
             // 
             this.lblEnYuksekSkorum.AutoSize = true;
-            this.lblEnYuksekSkorum.Location = new System.Drawing.Point(206, 274);
+            this.lblEnYuksekSkorum.Location = new System.Drawing.Point(151, 19);
             this.lblEnYuksekSkorum.Name = "lblEnYuksekSkorum";
             this.lblEnYuksekSkorum.Size = new System.Drawing.Size(13, 13);
-            this.lblEnYuksekSkorum.TabIndex = 22;
+            this.lblEnYuksekSkorum.TabIndex = 30;
             this.lblEnYuksekSkorum.Text = "0";
+            // 
+            // lblEnYuksekSkor
+            // 
+            this.lblEnYuksekSkor.AutoSize = true;
+            this.lblEnYuksekSkor.Location = new System.Drawing.Point(151, 5);
+            this.lblEnYuksekSkor.Name = "lblEnYuksekSkor";
+            this.lblEnYuksekSkor.Size = new System.Drawing.Size(13, 13);
+            this.lblEnYuksekSkor.TabIndex = 29;
+            this.lblEnYuksekSkor.Text = "0";
+            // 
+            // lblEnYkskSkrm
+            // 
+            this.lblEnYkskSkrm.AutoSize = true;
+            this.lblEnYkskSkrm.Location = new System.Drawing.Point(38, 19);
+            this.lblEnYkskSkrm.Name = "lblEnYkskSkrm";
+            this.lblEnYkskSkrm.Size = new System.Drawing.Size(107, 13);
+            this.lblEnYkskSkrm.TabIndex = 28;
+            this.lblEnYkskSkrm.Text = "En Yüksek Skorum =";
+            // 
+            // lblEnYkskSkor
+            // 
+            this.lblEnYkskSkor.AutoSize = true;
+            this.lblEnYkskSkor.Location = new System.Drawing.Point(52, 5);
+            this.lblEnYkskSkor.Name = "lblEnYkskSkor";
+            this.lblEnYkskSkor.Size = new System.Drawing.Size(90, 13);
+            this.lblEnYkskSkor.TabIndex = 27;
+            this.lblEnYkskSkor.Text = "En Yüksek Skor=";
+            // 
+            // btnSkorlarim
+            // 
+            this.btnSkorlarim.Location = new System.Drawing.Point(89, 39);
+            this.btnSkorlarim.Name = "btnSkorlarim";
+            this.btnSkorlarim.Size = new System.Drawing.Size(75, 23);
+            this.btnSkorlarim.TabIndex = 26;
+            this.btnSkorlarim.Text = "Skorlarım";
+            this.btnSkorlarim.UseVisualStyleBackColor = true;
+            this.btnSkorlarim.Click += new System.EventHandler(this.btnSkorlarim_Click);
             // 
             // FrmOyun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 326);
-            this.Controls.Add(this.lblEnYuksekSkorum);
-            this.Controls.Add(this.lblEnYuksekSkor);
-            this.Controls.Add(this.lblEnYkskSkrm);
-            this.Controls.Add(this.lblEnYkskSkor);
-            this.Controls.Add(this.btnSkorlarim);
-            this.Controls.Add(this.lblkullaniciAdi);
+            this.Controls.Add(this.pnlSkorlar);
+            this.Controls.Add(this.BtnE);
+            this.Controls.Add(this.btnBitir);
             this.Controls.Add(this.BtnYeniOyunBaslat);
             this.Controls.Add(this.lblKisiCevap);
             this.Controls.Add(this.lblDogruCevap);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pctYanlisCevap);
+            this.Controls.Add(this.pctDogruCevap);
             this.Controls.Add(this.BtnSonraki);
             this.Controls.Add(this.LblYanlis);
             this.Controls.Add(this.LblDogru);
@@ -333,8 +359,10 @@ namespace BilgiYarismasi
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Oyun";
             this.Load += new System.EventHandler(this.FrmOyun_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctDogruCevap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctYanlisCevap)).EndInit();
+            this.pnlSkorlar.ResumeLayout(false);
+            this.pnlSkorlar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,17 +382,19 @@ namespace BilgiYarismasi
         private System.Windows.Forms.Label LblDogru;
         private System.Windows.Forms.Label LblYanlis;
         private System.Windows.Forms.Button BtnSonraki;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pctDogruCevap;
+        private System.Windows.Forms.PictureBox pctYanlisCevap;
         private System.Windows.Forms.Label lblDogruCevap;
         private System.Windows.Forms.Label lblKisiCevap;
         private System.Windows.Forms.Button BtnYeniOyunBaslat;
-        private System.Windows.Forms.Label lblkullaniciAdi;
-        private System.Windows.Forms.Button btnSkorlarim;
-        private System.Windows.Forms.Label lblEnYkskSkor;
-        private System.Windows.Forms.Label lblEnYkskSkrm;
-        private System.Windows.Forms.Label lblEnYuksekSkor;
+        private System.Windows.Forms.Button btnBitir;
+        private System.Windows.Forms.Button BtnE;
+        private System.Windows.Forms.Panel pnlSkorlar;
         private System.Windows.Forms.Label lblEnYuksekSkorum;
+        private System.Windows.Forms.Label lblEnYkskSkor;
+        private System.Windows.Forms.Label lblEnYuksekSkor;
+        private System.Windows.Forms.Button btnSkorlarim;
+        private System.Windows.Forms.Label lblEnYkskSkrm;
     }
 }
 

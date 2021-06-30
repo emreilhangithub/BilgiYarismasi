@@ -88,6 +88,7 @@
     <Compile Include="FrmKayitOl.Designer.cs">
       <DependentUpon>FrmKayitOl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Skorlar.cs" />
     <Compile Include="VeriTasima.cs" />
     <Compile Include="FrmYoneticiEkrani.cs">
       <SubType>Form</SubType>
