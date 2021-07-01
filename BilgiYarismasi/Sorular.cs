@@ -29,6 +29,6 @@ namespace BilgiYarismasi
         public string E1 { get => E; set => E = value; }
         public string Cevap1 { get => Cevap; set => Cevap = value; }
         public int Yonetici_Id1 { get => Yonetici_Id; set => Yonetici_Id = value; }
-    
+
     }
 }

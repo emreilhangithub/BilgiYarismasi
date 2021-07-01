@@ -261,7 +261,8 @@ namespace BilgiYarismasi
                 return;
             }
 
-            SqlCommand aramakomutu = new SqlCommand("Select * from Tbl_Sorular where Soru like '%" + txtSoruArama.Text + "%' ", bgl.baglanti());
+            SqlCommand aramakomutu = new SqlCommand("Select * from Tbl_Sorular where (Soru LIKE '%' + @Soru + '%')", bgl.baglanti());
+            aramakomutu.Parameters.AddWithValue("@Soru",txtSoruArama.Text);
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(aramakomutu);
             da.Fill(dt);

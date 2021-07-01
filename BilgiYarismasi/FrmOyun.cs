@@ -14,23 +14,19 @@ namespace BilgiYarismasi
         //int soruno = 0, dogru = 0, yanlis = 0, bitisSoruSayisi;
         sqlbaglantisi bgl = new sqlbaglantisi();
         Skorlar skorlar = new Skorlar();
+        Sorular sorular = new Sorular();
 
         void yeniOyunBaslat()
         {
             rchSoru.Text = "Oyunu Başlatmak İçin Lütfen BAŞLAT Butonuna Basın";
-            BtnA.Text = "A";
-            BtnB.Text = "B";
-            BtnC.Text = "C";
-            BtnD.Text = "D";
-            BtnE.Text = "E";
+            sikVisible(true); ///butona basınca şıkları gösterdik
             skorlar.Soru_Sayisi1 = 0;
             skorlar.Dogru_Sayisi1 = 0;
             skorlar.Yanlis_Sayisi1 = 0;
             LblSorunno.Text = skorlar.Soru_Sayisi1.ToString();
             LblDogru.Text = skorlar.Dogru_Sayisi1.ToString();          
             LblYanlis.Text = skorlar.Yanlis_Sayisi1.ToString();
-            BtnSonraki.Text = "Başlat";
-            BtnSonraki.Enabled = true;
+            btnOyunuBaslat.Visible = true;
             BtnYeniOyunBaslat.Visible = false;
             pnlSkorlar.Visible = true;
         }
@@ -38,20 +34,16 @@ namespace BilgiYarismasi
         void oyunBitir(int sorusayisi)
         {
             skorlar.Skor1 = skorlar.Dogru_Sayisi1 * 5;
-            rchSoru.Text = "";
+            rchSoru.Text = "Oyun Bitti Yeni Oyun Başlat Butonuna Basınız...";
             LblSorunno.Text = "Bitti";
-            BtnSonraki.Text = "Sonuçlar";
-            BtnA.Enabled = false; //butona basınca sayac 4 ise şıkları engelledik
-            BtnB.Enabled = false;
-            BtnC.Enabled = false;
-            BtnD.Enabled = false;
-            BtnE.Enabled = false;
-            BtnSonraki.Enabled = false;
-            btnBitir.Enabled = false;
+            sikVisible(false); //butona basınca oyun bitti ise şıkları sakladık
+            sikEnabled(false);
+            sikBaslangic();//siklari ilk haline getirdik
+            BtnSonrakiSoru.Visible = false;
+            btnOyunuBitir.Visible = false;
             BtnYeniOyunBaslat.Visible = true;
             pctDogruCevap.Visible = false;
             pctYanlisCevap.Visible = false;
-
 
             SqlCommand skorkayit = new SqlCommand("INSERT INTO Tbl_Skorlar (Skor,Soru_Sayisi,Dogru_Sayisi,Yanlis_Sayisi,Kullanici_Id) VALUES (@Skor,@Soru_Sayisi,@Dogru_Sayisi,@Yanlis_Sayisi,@Kullanici_Id)", bgl.baglanti());
             skorkayit.Parameters.AddWithValue("@Skor", skorlar.Skor1);
@@ -80,13 +72,53 @@ namespace BilgiYarismasi
         }
 
         void cevapVerildi()
-        {            
-            BtnA.Enabled = false; //butona tıklamayı engelledik burada tekrar tıklanmaması için
-            BtnB.Enabled = false;
-            BtnC.Enabled = false;
-            BtnD.Enabled = false;
-            BtnE.Enabled = false;
+        {
+            sikEnabled(false);//butona tıklamayı engelledik burada tekrar tıklanmaması için
             //BtnSonraki.Enabled = true; // eğer boş bırakılmasını engellemek istiyotrsan bunu sonraki butonu aktif etmen gerekiyor
+        }
+
+        void sikEnabled(bool durum)
+        {
+            BtnA.Enabled = durum;
+            BtnB.Enabled = durum;
+            BtnC.Enabled = durum;
+            BtnD.Enabled = durum;
+            BtnE.Enabled = durum;
+        }
+
+        void sikVisible(bool durum)
+        {
+            BtnA.Visible = durum;
+            BtnB.Visible = durum;
+            BtnC.Visible = durum;
+            BtnD.Visible = durum;
+            BtnE.Visible = durum;
+        }
+
+        void sikBaslangic()
+        {
+            BtnA.Text = "A";
+            BtnB.Text = "B";
+            BtnC.Text = "C";
+            BtnD.Text = "D";
+            BtnE.Text = "E";
+        }
+
+        void sorulariGetir()
+        {
+            SqlCommand komut = new SqlCommand("select * from Tbl_Sorular where Soru_No = @Soru_No", bgl.baglanti());
+            komut.Parameters.AddWithValue("@Soru_No", skorlar.Soru_Sayisi1);
+            SqlDataReader oku = komut.ExecuteReader();
+            while (oku.Read())
+            {
+                rchSoru.Text = oku["Soru"].ToString();
+                BtnA.Text = oku["A"].ToString();
+                BtnB.Text = oku["B"].ToString();
+                BtnC.Text = oku["C"].ToString();
+                BtnD.Text = oku["D"].ToString();
+                BtnE.Text = oku["E"].ToString();
+                lblDogruCevap.Text = oku["Cevap"].ToString();
+            }
         }
 
 
@@ -134,26 +166,26 @@ namespace BilgiYarismasi
             skorlar.Yanlis_Sayisi1 = 0;
         }
 
-
-
-
-        private void BtnSonraki_Click(object sender, EventArgs e)
+        private void btnOyunuBaslat_Click(object sender, EventArgs e)
         {
-            BtnA.Enabled = true; //butona basınca engellemeyi kaldırdık
-            BtnB.Enabled = true;
-            BtnC.Enabled = true;
-            BtnD.Enabled = true;
-            BtnE.Enabled = true;
-            //BtnSonraki.Enabled = true; //butona basınca sonrakinin özellgini engellersek boş cevap vermez bize
-            BtnSonraki.Text = "Soraki";
-            btnBitir.Visible = true; //oyun baslayınca butonu aktif hale getir
-            btnBitir.Enabled = true; // oyun baslayınca butona basabilsinler
+            skorlar.Soru_Sayisi1=1; //oyun baslayınca 1.soruyu getir
+            LblSorunno.Text = skorlar.Soru_Sayisi1.ToString(); // 1.soruyu labele at
+            sikEnabled(true); //oyun baslayınca sıkları aktif hale getir
+            btnOyunuBaslat.Visible = false;
+            BtnSonrakiSoru.Visible = true;
+            btnOyunuBitir.Visible = true; //oyun baslayınca butonu aktif hale getir
+            btnOyunuBitir.Enabled = true; // oyun baslayınca butona basabilsinler
+            pnlSkorlar.Visible = false; //oyun baslayınca skorlar panelini gizledik
 
-            pctDogruCevap.Visible = false; //sonrakine her bastgında görünümü gizledik
-            pctYanlisCevap.Visible = false;
+            sorulariGetir();
+        }
 
-            pnlSkorlar.Visible = false;
-
+        private void BtnSonrakiSoru_Click(object sender, EventArgs e)
+        {
+            sikEnabled(true); //sonraki butona basınca şıkları basmayı engellemeyi kaldırdık
+            //BtnSonraki.Enabled = true; //butona basınca sonrakinin özellgini engellersek boş cevap vermez bize      
+            pctDogruCevap.Visible = false; //sonrakine her bastgında resimleri gizledik
+            pctYanlisCevap.Visible = false;    
 
             //soruno = soruno + 1; aynı mantık
             skorlar.Soru_Sayisi1++; //butona her bastıgımızda burada sorunumarasını bire birer artıracagız
@@ -161,23 +193,8 @@ namespace BilgiYarismasi
 
             if (skorlar.Soru_Sayisi1 != 0)
             {
-
-                SqlCommand komut = new SqlCommand("select * from Tbl_Sorular where Soru_No = @Soru_No", bgl.baglanti());
-                komut.Parameters.AddWithValue("@Soru_No", skorlar.Soru_Sayisi1);
-                SqlDataReader oku = komut.ExecuteReader();
-                while (oku.Read())
-                {
-                    rchSoru.Text = oku["Soru"].ToString();
-                    BtnA.Text = oku["A"].ToString();
-                    BtnB.Text = oku["B"].ToString();
-                    BtnC.Text = oku["C"].ToString();
-                    BtnD.Text = oku["D"].ToString();
-                    BtnE.Text = oku["E"].ToString();
-                    lblDogruCevap.Text = oku["Cevap"].ToString();
-                }
-
+                sorulariGetir();
             }
-
 
             if (skorlar.Soru_Sayisi1 == skorlar.Bitis_Sayisi)
             {
@@ -200,12 +217,11 @@ namespace BilgiYarismasi
         }
 
 
-        private void btnBitir_Click(object sender, EventArgs e)
+        private void btnOyunuBitir_Click(object sender, EventArgs e)
         {
             int sorusayisi = int.Parse(LblSorunno.Text);
 
             oyunBitir(sorusayisi);            
-            btnBitir.Visible = false;
         }
 
         private void BtnA_Click(object sender, EventArgs e)
@@ -293,8 +309,6 @@ namespace BilgiYarismasi
                 yanlisCevap();
             }
         }
-
-
-
+        
     }
 }
