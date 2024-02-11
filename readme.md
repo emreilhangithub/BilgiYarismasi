@@ -23,6 +23,10 @@ Databse kısmına aşşağıdan ulaşıp kendinize yükleyebilirsiniz. https://g
 ### Oyun Ekrani
 1)Kullanıcı giriş yaptıktan sonra oyun ekranı açılır.
 
+En Yüksek Skor = Oyundaki en yüksek skoru temsil eder.
+
+En Yüksek Skorum = Kullanıcıya ait en yüksek skorunu temsil eder.
+
 2)Başlat butonuna basarak oyunu başlatabilirsiniz.
 ![OyunEkrani](https://github.com/emreilhangithub/BilgiYarismasi/blob/master/images/OyunEkrani.png)
 
@@ -43,6 +47,7 @@ Soruyu atlamak için Sonraki butonuna basabilirsiniz.
 ![YanlisCevap](https://github.com/emreilhangithub/BilgiYarismasi/blob/master/images/YanlisCevap.png)
 
 7)Oyunu bitirmek için Bitir butonuna bitirince skorlarını sisteme kayıt olur.
+
 ![Bitir](https://github.com/emreilhangithub/BilgiYarismasi/blob/master/images/Bitir.png)
 
 8)Oyunu bitirdikten sonra yeniden başlatmak için Yeniden başlat butonuna basarsanız oyun yeniden başlar.
@@ -50,6 +55,7 @@ Soruyu atlamak için Sonraki butonuna basabilirsiniz.
 
 ### Kayıt Ol
 Kayit Ol = Kullanıcı bilgilerini doldurarak sisteme kayıt olabilir.
+
 ![KayitOl](https://github.com/emreilhangithub/BilgiYarismasi/blob/master/images/KayitOl.png)
 
 ### Skorlar
@@ -58,6 +64,7 @@ Bu ekranda daha önce oyun oynamış tüm oyuncuların skorları gözükür.
 
 ### Yönetici Giriş
 Yönetici bilgilerini doldurarak sisteme kayıt olabilir.
+
 ![YoneticiGiris](https://github.com/emreilhangithub/BilgiYarismasi/blob/master/images/YoneticiGiris.png)
 
 ### Yönetici Paneli
@@ -74,15 +81,23 @@ Soru Ara Butonu: Belirli bir kelime veya ifade içeren soruları aramak için ku
 ![YoneticiPaneli](https://github.com/emreilhangithub/BilgiYarismasi/blob/master/images/YoneticiPaneli.png)
 
 Kategori Ekle Butonu: Yeni bir kategori eklemek için kullanılır. "Kategori Adı" alanına yeni kategorinin adını yazın ve "Ekle" butonuna basın.
+
+
 ![YoneticiKategoriEkle](https://github.com/emreilhangithub/BilgiYarismasi/blob/master/images/YoneticiKategoriEkle.png)
 
 Kategori Güncelle Butonu: Varolan bir kategoriyi güncellemek için kullanılır. Güncellemek istediğiniz kategoriyi seçin, yeni adını yazın ve "Güncelle" butonuna basın.
+
+
 ![YoneticiKategoriGuncelle](https://github.com/emreilhangithub/BilgiYarismasi/blob/master/images/YoneticiKategoriGuncelle.png)
 
 Kategori Pasif Yap Butonu: Seçilen bir kategoriyi pasif hale getirmek için kullanılır. Pasif hale getirmek istediğiniz kategoriyi seçin ve "Pasif Yap" butonuna basın.
+
+
 ![YoneticiKategoriPasifeAlma](https://github.com/emreilhangithub/BilgiYarismasi/blob/master/images/YoneticiKategoriPasifeAlma.png)
 
 Kategoriye Göre Arama Yap Butonu: Seçilen kategoriye göre oyun listesini günceller burada amaç sadece o kategoriye ait soruları görebilmek. 
+
+
 ![YoneticiPaneliKategoriyeGoreListeleme](https://github.com/emreilhangithub/BilgiYarismasi/blob/master/images/YoneticiPaneliKategoriyeGoreListeleme.png)
 
 ```.NET``` ```C#``` ```MSSQL```  ```WindowsForm``` ```Software``` ```Computer``` ```Programmer```
