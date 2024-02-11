@@ -64,7 +64,7 @@ namespace BilgiYarismasi
         {
             FrmUyeOl fr = new FrmUyeOl();
             fr.Show();
-            this.Hide();
+            //this.Hide();
         }
 
         private void lblYoneticiGiris_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

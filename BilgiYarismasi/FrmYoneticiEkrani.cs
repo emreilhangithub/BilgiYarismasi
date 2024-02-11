@@ -318,5 +318,10 @@ namespace BilgiYarismasi
             fr.ShowDialog();
             kategoriGetir();
         }
+
+        private void FrmYoneticiEkrani_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

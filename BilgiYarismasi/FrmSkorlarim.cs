@@ -32,5 +32,10 @@ namespace BilgiYarismasi
             bgl.baglanti().Close();
             
         }
+
+        private void FrmSkorlarim_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -52,5 +52,10 @@ namespace BilgiYarismasi
                 MessageBox.Show("Geçersiz Giriş, lütfen kullanıcı adı ve şifreyi kontrol edin");
             }
         }
+
+        private void FrmYoneticiGiris_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

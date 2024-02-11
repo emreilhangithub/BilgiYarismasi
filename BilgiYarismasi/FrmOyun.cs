@@ -309,6 +309,10 @@ namespace BilgiYarismasi
                 yanlisCevap();
             }
         }
-        
+
+        private void FrmOyun_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

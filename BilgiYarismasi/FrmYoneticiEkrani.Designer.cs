@@ -76,6 +76,7 @@ namespace BilgiYarismasi
             this.dataGridView1.Location = new System.Drawing.Point(0, 406);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(821, 170);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -139,7 +140,7 @@ namespace BilgiYarismasi
             // 
             this.txtSoruArama.Location = new System.Drawing.Point(589, 369);
             this.txtSoruArama.Name = "txtSoruArama";
-            this.txtSoruArama.Size = new System.Drawing.Size(100, 27);
+            this.txtSoruArama.Size = new System.Drawing.Size(100, 37);
             this.txtSoruArama.TabIndex = 6;
             // 
             // label1
@@ -147,7 +148,7 @@ namespace BilgiYarismasi
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(536, 372);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 19);
+            this.label1.Size = new System.Drawing.Size(68, 29);
             this.label1.TabIndex = 7;
             this.label1.Text = "Soru:";
             // 
@@ -156,7 +157,7 @@ namespace BilgiYarismasi
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(11, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 19);
+            this.label2.Size = new System.Drawing.Size(93, 29);
             this.label2.TabIndex = 8;
             this.label2.Text = "Soru İd:";
             // 
@@ -165,7 +166,7 @@ namespace BilgiYarismasi
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(27, 74);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 19);
+            this.label3.Size = new System.Drawing.Size(68, 29);
             this.label3.TabIndex = 9;
             this.label3.Text = "Soru:";
             // 
@@ -174,7 +175,7 @@ namespace BilgiYarismasi
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(26, 194);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 19);
+            this.label4.Size = new System.Drawing.Size(72, 29);
             this.label4.TabIndex = 10;
             this.label4.Text = "Şık A)";
             // 
@@ -183,7 +184,7 @@ namespace BilgiYarismasi
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(26, 230);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 19);
+            this.label5.Size = new System.Drawing.Size(72, 29);
             this.label5.TabIndex = 11;
             this.label5.Text = "Şık B)";
             // 
@@ -192,7 +193,7 @@ namespace BilgiYarismasi
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(28, 266);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 19);
+            this.label6.Size = new System.Drawing.Size(70, 29);
             this.label6.TabIndex = 12;
             this.label6.Text = "Şık C)";
             // 
@@ -201,7 +202,7 @@ namespace BilgiYarismasi
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(26, 302);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 19);
+            this.label7.Size = new System.Drawing.Size(73, 29);
             this.label7.TabIndex = 13;
             this.label7.Text = "Şık D)";
             // 
@@ -210,7 +211,7 @@ namespace BilgiYarismasi
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(27, 338);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 19);
+            this.label8.Size = new System.Drawing.Size(71, 29);
             this.label8.TabIndex = 14;
             this.label8.Text = "Şık E)";
             // 
@@ -219,7 +220,7 @@ namespace BilgiYarismasi
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(18, 374);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 19);
+            this.label9.Size = new System.Drawing.Size(83, 29);
             this.label9.TabIndex = 15;
             this.label9.Text = "Cevap:";
             // 
@@ -228,49 +229,49 @@ namespace BilgiYarismasi
             this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(92, 1);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(202, 27);
+            this.txtId.Size = new System.Drawing.Size(202, 37);
             this.txtId.TabIndex = 16;
             // 
             // txtA
             // 
             this.txtA.Location = new System.Drawing.Point(92, 194);
             this.txtA.Name = "txtA";
-            this.txtA.Size = new System.Drawing.Size(202, 27);
+            this.txtA.Size = new System.Drawing.Size(202, 37);
             this.txtA.TabIndex = 17;
             // 
             // txtB
             // 
             this.txtB.Location = new System.Drawing.Point(92, 230);
             this.txtB.Name = "txtB";
-            this.txtB.Size = new System.Drawing.Size(202, 27);
+            this.txtB.Size = new System.Drawing.Size(202, 37);
             this.txtB.TabIndex = 18;
             // 
             // txtC
             // 
             this.txtC.Location = new System.Drawing.Point(92, 266);
             this.txtC.Name = "txtC";
-            this.txtC.Size = new System.Drawing.Size(202, 27);
+            this.txtC.Size = new System.Drawing.Size(202, 37);
             this.txtC.TabIndex = 19;
             // 
             // txtD
             // 
             this.txtD.Location = new System.Drawing.Point(92, 302);
             this.txtD.Name = "txtD";
-            this.txtD.Size = new System.Drawing.Size(202, 27);
+            this.txtD.Size = new System.Drawing.Size(202, 37);
             this.txtD.TabIndex = 20;
             // 
             // txtE
             // 
             this.txtE.Location = new System.Drawing.Point(92, 338);
             this.txtE.Name = "txtE";
-            this.txtE.Size = new System.Drawing.Size(202, 27);
+            this.txtE.Size = new System.Drawing.Size(202, 37);
             this.txtE.TabIndex = 21;
             // 
             // txtCevap
             // 
             this.txtCevap.Location = new System.Drawing.Point(92, 374);
             this.txtCevap.Name = "txtCevap";
-            this.txtCevap.Size = new System.Drawing.Size(202, 27);
+            this.txtCevap.Size = new System.Drawing.Size(202, 37);
             this.txtCevap.TabIndex = 22;
             // 
             // rchSoru
@@ -308,7 +309,7 @@ namespace BilgiYarismasi
             this.txtSoruNo.Enabled = false;
             this.txtSoruNo.Location = new System.Drawing.Point(92, 36);
             this.txtSoruNo.Name = "txtSoruNo";
-            this.txtSoruNo.Size = new System.Drawing.Size(202, 27);
+            this.txtSoruNo.Size = new System.Drawing.Size(202, 37);
             this.txtSoruNo.TabIndex = 30;
             // 
             // label11
@@ -316,7 +317,7 @@ namespace BilgiYarismasi
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(3, 39);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 19);
+            this.label11.Size = new System.Drawing.Size(103, 29);
             this.label11.TabIndex = 31;
             this.label11.Text = "Soru No:";
             // 
@@ -376,7 +377,7 @@ namespace BilgiYarismasi
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(0, 162);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(74, 19);
+            this.label10.Size = new System.Drawing.Size(108, 29);
             this.label10.TabIndex = 36;
             this.label10.Text = "Kategori:";
             // 
@@ -386,12 +387,12 @@ namespace BilgiYarismasi
             this.cmbKategori.FormattingEnabled = true;
             this.cmbKategori.Location = new System.Drawing.Point(92, 159);
             this.cmbKategori.Name = "cmbKategori";
-            this.cmbKategori.Size = new System.Drawing.Size(202, 27);
+            this.cmbKategori.Size = new System.Drawing.Size(202, 37);
             this.cmbKategori.TabIndex = 35;
             // 
             // FrmYoneticiEkrani
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 576);
             this.Controls.Add(this.btnKategoriGuncelle);
@@ -434,6 +435,7 @@ namespace BilgiYarismasi
             this.Name = "FrmYoneticiEkrani";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Yönetici Ekranı";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmYoneticiEkrani_FormClosing);
             this.Load += new System.EventHandler(this.FrmYoneticiEkrani_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

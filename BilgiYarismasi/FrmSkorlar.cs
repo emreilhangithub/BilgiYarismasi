@@ -28,5 +28,10 @@ namespace BilgiYarismasi
             dataGridView1.DataSource = dt;
             bgl.baglanti().Close();
         }
+
+        private void FrmSkorlar_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
